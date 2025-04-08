@@ -82,14 +82,28 @@ controllers:
     enable_odom_tf: true
     publish_odom_tf: true
     power:
-      effort_coeff: 12.0
-      vel_coeff: 0.0048
+      effort_coeff: 1.339
+      vel_coeff: 0.016
       power_offset: 0
     twist_angular: 0.5233
     timeout: 0.1
     pid_follow: { p: 8, i: 0, d: 2.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
     pid_block_error: { p: 0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
     twist_covariance_diagonal: [ 0.001, 0.001, 0.001, 0.001, 0.001, 0.001 ]
+
+    k_coeff:
+      a11: [ -541.9099, 539.6704, -229.3145, -14.6116 ]
+      a12: [ 7.9762, -15.0726, 0.4753, -4.8490 ]
+      a13: [ 7.4005, -9.1556, 4.0075, -2.9513 ]
+      a14: [ 53.7669, -54.0225, 19.4761, -8.8620 ]
+      a15: [ -4.5343e+03, 4.4284e+03, -1.5590e+03, 14.0359 ]
+      a16: [ -80.8082, 80.7056, -30.2421, 1.5186 ]
+      a17: [ 41.8861, -34.5311, 11.0067, 1.5509 ]
+      a18: [ -7.8800, 7.8544, -3.7578, 0.0376 ]
+      a19: [ -4.8799, 4.7918, -1.6796, -0.0386 ]
+      a20: [ -12.5211, 12.2391, -4.2771, -0.1402 ]
+      a21: [ -73.6882, 112.9237, -55.8259, 64.0773 ]
+      a22: [ 0.7705, 0.2460, -0.4746, 1.6333 ]
 
     # LeggedBalanceController
     pid_left_leg: { p: 1300.0, i: 200., d: 150, i_clamp_max: 30.0, i_clamp_min: -30.0, antiwindup: true, publish_state: false }
@@ -98,14 +112,16 @@ controllers:
     pid_roll: { p: 600.0, i: 0, d: 25, i_clamp_max: 15.0, i_clamp_min: -15.0, antiwindup: true, publish_state: false }
     pid_center_gravity: { p: 0.0, i: 80.0, d: 0, i_clamp_max: 3.5, i_clamp_min: -3.5, antiwindup: true, publish_state: false }
     pid_length_diff: { p: 30.0, i: 0, d: 0, i_clamp_max: 0.0, i_clamp_min: -0.0, antiwindup: true, publish_state: false }
-    pid_yaw_pos: { p: 10.0, i: 0, d: 0, i_clamp_max: 0.0, i_clamp_min: -0.0, antiwindup: true, publish_state: false }
-    pid_yaw_spd: { p: 10.0, i: 0, d: 0, i_clamp_max: 0.0, i_clamp_min: -0.0, antiwindup: true, publish_state: false }
+    pid_yaw_pos: { p: 1.0, i: 0, d: 0, i_clamp_max: 0.0, i_clamp_min: -0.0, antiwindup: true, publish_state: false }
+    pid_yaw_spd: { p: 1.0, i: 0, d: 0, i_clamp_max: 0.0, i_clamp_min: -0.0, antiwindup: true, publish_state: false }
 
     leg_protect_angle: 0.9  #0.9
     pitch_protect_angle: 1.1 #1.1
     roll_protect_angle: 1.0
     leg_protect_length: 0.1
     leg_protect_speed: 8.0
+
+    jumpOverTime: 2.0
 
     vmc_bias_angle: 3.665
     imu_name: "base_imu"
