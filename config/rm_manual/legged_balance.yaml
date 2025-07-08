@@ -1,5 +1,5 @@
 rm_manual:
-  robot_type: "legged_balance"
+  robot_type: "legged_wheel_balance"
   dbus_topic: "/rm_ecat_hw/dbus"
   chassis_calibrate_motor: [ "left_front_leg_joint_motor", "right_front_leg_joint_motor", "left_back_leg_joint_motor", "right_back_leg_joint_motor" ]
   gimbal_calibrate_motor: [ "pitch_joint_motor" ]
@@ -8,7 +8,7 @@ rm_manual:
   chassis:
     topic: "/cmd_chassis"
     accel_x:
-      - [ 60.0,9.0 ]
+      - [ 60.0,2.2 ]
     accel_y:
       - [ 60.0,2.0 ]
     accel_z:
